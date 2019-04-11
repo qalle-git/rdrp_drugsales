@@ -5,7 +5,7 @@ TryToSell = function(pedId)
         return
     end
 
-    ESX.ShowNotification("You wan't to buy some " .. Config.DrugItem .. "?")
+    ESX.ShowNotification("You wan't to buy some stuff?")
 
     cachedPeds[pedId] = true
 
