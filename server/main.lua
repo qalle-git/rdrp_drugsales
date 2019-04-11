@@ -11,9 +11,12 @@ ESX.RegisterServerCallback("rdrp_drugsales:sellDrug", function(source, cb)
         local hasItem = DoPlayerHaveItems(player)
 
         if hasItem then
+            math.randomseed(os.time())
+            local randomPayment = math.random(Config.Payment[1], Config.Payment[2])
+
             player.removeInventoryItem(hasItem, 1)
 
-            player.addMoney(Config.Payment[1], Config.Payment[2])
+            player.addMoney(randomPayment)
 
             cb(true)
         else
