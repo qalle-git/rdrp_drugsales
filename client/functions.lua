@@ -1,5 +1,5 @@
 TryToSell = function(pedId)
-    if IsPedDeadOrDying(pedId) or IsPedAPlayer(pedId) or IsPedFalling(pedId) or GetPedType(pedId) == 28 then
+    if not DoesEntityExist(pedId) or IsPedDeadOrDying(pedId) or IsPedAPlayer(pedId) or IsPedFalling(pedId) or GetPedType(pedId) == 28 then
         Citizen.Trace("rdrp_drugsales: ped: " .. pedId .. " not able to sell to.")
 
         return
